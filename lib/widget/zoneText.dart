@@ -27,9 +27,11 @@ class ZoneTextState extends State<ZoneText> {
           Flexible(
             child: TextField(
               controller: _textEditingController,
+              // ignore: prefer_const_constructors
               decoration: InputDecoration.collapsed(
                 hintText: "écrivez votre message",
               ),
+
               maxLines: null,
             ),
           ),
@@ -53,7 +55,6 @@ class ZoneTextState extends State<ZoneText> {
   }
 
   _sendMessage() {
-    //envoie message dans firebase
     print(_textEditingController.text);
   }
 }

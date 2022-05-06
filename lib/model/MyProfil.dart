@@ -12,8 +12,6 @@ class MyProfil {
     return _uid;
   }
 
-  //Constructeur
-
   MyProfil(DocumentSnapshot snapshot) {
     _uid = snapshot.id;
     Map<String, dynamic> map = snapshot.data() as Map<String, dynamic>;
@@ -25,7 +23,6 @@ class MyProfil {
     dateNaissance = timpestamp?.toDate();
   }
 
-//Méthodes
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map;
     return map = {

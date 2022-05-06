@@ -27,7 +27,7 @@ class chatControllerState extends State<chatController> {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: Color.fromARGB(255, 211, 88, 88),
         body: Stack(
           children: [
             bodyPage(),
@@ -39,6 +39,11 @@ class chatControllerState extends State<chatController> {
     print(widget.moi.uid);
     print(widget.partenaire.uid);
     return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("images/background-image.jpg"),
+            fit: BoxFit.cover),
+      ),
       child: InkWell(
         onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
         child: Column(

@@ -25,12 +25,9 @@ class AllUsersState extends State<AllUsers> {
     return StreamBuilder<QuerySnapshot>(
         stream: FirestoreHelper().fireUser.snapshots(),
         builder: (context, snapshot) {
-          // Pas d'information dans la collection Users
           if (!snapshot.hasData) {
             return const CircularProgressIndicator();
-          }
-          // Information dans la collection Users
-          else {
+          } else {
             List documents = snapshot.data!.docs;
             return ListView.builder(
                 itemCount: documents.length,
@@ -39,27 +36,36 @@ class AllUsersState extends State<AllUsers> {
                   if (users.uid == Myprofil.uid) {
                     return Container();
                   } else {
-                    return Card(
-                      elevation: 5.0,
-                      color: Colors.amber,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: ListTile(
-                        //Image
-                        leading: ImageRond(image: users.image, size: 60),
-                        trailing: IconButton(
-                          icon: const Icon(Icons.chat_bubble),
-                          onPressed: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return chatController(Myprofil, users);
-                            }));
-                          },
-                        ),
+                    // ignore: unnecessary_new
+                    return new InkWell(
+                      child: Card(
+                        elevation: 5.0,
+                        color: Colors.amber,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: ListTile(
+                          //Image
+                          leading: ImageRond(image: users.image, size: 60),
+                          trailing: IconButton(
+                            icon: const Icon(Icons.chat_bubble),
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return chatController(Myprofil, users);
+                              }));
+                            },
+                          ),
 
-                        title: Text("${users.prenom} ${users.nom}"),
-                        subtitle: Text("${users.mail}"),
+                          title: Text("${users.prenom} ${users.nom}"),
+                          subtitle: Text("${users.mail}"),
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return chatController(Myprofil, users);
+                        }));
+                      },
                     );
                   }
                 });

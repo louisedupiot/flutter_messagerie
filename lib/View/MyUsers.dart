@@ -17,14 +17,10 @@ class MyUsers extends StatefulWidget {
 }
 
 class MyUsersState extends State<MyUsers> {
-  //Variables
   String? lienImage;
   Uint8List? bytesImages;
   String? nameImage;
 
-  /////
-
-  //Fonctions
   RecupererImage() async {
     FilePickerResult? result = await FilePicker.platform
         .pickFiles(withData: true, type: FileType.image);
@@ -55,7 +51,6 @@ class MyUsersState extends State<MyUsers> {
                       child: const Text("Annuler")),
                   ElevatedButton(
                       onPressed: () {
-                        //Stocker mon image dans la base de donnée
                         FirestoreHelper()
                             .stockageImage(nameImage!, bytesImages!)
                             .then((value) {
@@ -85,7 +80,6 @@ class MyUsersState extends State<MyUsers> {
                       child: const Text("Annuler")),
                   ElevatedButton(
                       onPressed: () {
-                        //Stocker mon image dans la base de donnée
                         FirestoreHelper()
                             .stockageImage(nameImage!, bytesImages!)
                             .then((value) {
@@ -119,7 +113,6 @@ class MyUsersState extends State<MyUsers> {
   Widget bodyPage() {
     return Column(
       children: [
-        //Logo de moi
         InkWell(
           child: ImageRond(
             image: Myprofil.image,
@@ -130,8 +123,6 @@ class MyUsersState extends State<MyUsers> {
             RecupererImage();
           },
         ),
-
-        //NOm et prénom
         Row(
           children: [
             Container(
@@ -161,7 +152,6 @@ class MyUsersState extends State<MyUsers> {
         const SizedBox(
           height: 10,
         ),
-
         Row(
           children: [
             Container(
@@ -191,10 +181,7 @@ class MyUsersState extends State<MyUsers> {
         const SizedBox(
           height: 10,
         ),
-
         Text(Myprofil.mail)
-
-        // adresse mail
       ],
     );
   }

@@ -25,8 +25,11 @@ class messageBubble extends StatelessWidget {
   List<Widget> widgetBubble(bool moi) {
     CrossAxisAlignment alignment =
         (moi) ? CrossAxisAlignment.end : CrossAxisAlignment.start;
-    Color colorBubble = (moi) ? Colors.green : Colors.blue;
+    Color colorBubble = (moi)
+        ? Color.fromARGB(255, 143, 26, 26)
+        : Color.fromARGB(255, 248, 141, 2);
     Color textcolor = Colors.white;
+
     return <Widget>[
       Expanded(
         child: Column(

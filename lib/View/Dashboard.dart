@@ -57,13 +57,7 @@ class DashboardState extends State<Dashboard> {
           selected = value;
         });
       },
-      children: [
-        //Afficher tous les utilisateurs
-        AllUsers(),
-
-        //Créer une page de profil
-        MyUsers()
-      ],
+      children: [AllUsers(), MyUsers()],
       controller: controller,
     );
   }
