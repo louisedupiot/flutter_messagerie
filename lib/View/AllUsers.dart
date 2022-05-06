@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class AllUsers extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
+    
     return AllUsersState();
   }
 }
@@ -17,7 +17,7 @@ class AllUsers extends StatefulWidget {
 class AllUsersState extends State<AllUsers> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    
     return bodyPage();
   }
 
@@ -27,7 +27,12 @@ class AllUsersState extends State<AllUsers> {
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const CircularProgressIndicator();
+<<<<<<< HEAD
           } else {
+=======
+          }
+          else {
+>>>>>>> b1c7c727a946ecb0bbde13ceda3fe86404a0e7fe
             List documents = snapshot.data!.docs;
             return ListView.builder(
                 itemCount: documents.length,

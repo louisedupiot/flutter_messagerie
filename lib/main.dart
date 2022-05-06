@@ -16,7 +16,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -178,18 +178,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text("Validation")),
         const SizedBox(width: 10),
 
-        /*InkWell(
-                    onTap :() {
-                      print("J'ai appuyer");
-                      Navigator.push(context,MaterialPageRoute(
-                          builder :( context){
-                            return SignIn();
-                          }
-                      ));
-                    },
-                    child: const Text("Inscription")
-
-                ),*/
       ]),
     ]);
   }

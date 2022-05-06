@@ -6,7 +6,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firstapplicationeisi/model/MyProfil.dart';
 
 class FirestoreHelper {
-  //Attributs
   final auth = FirebaseAuth.instance;
   final fireUser = FirebaseFirestore.instance.collection("Users");
   final storage = FirebaseStorage.instance;
@@ -15,8 +14,11 @@ class FirestoreHelper {
   final fire_conversation =
       FirebaseFirestore.instance.collection('Conversations');
 
+<<<<<<< HEAD
   //Méthodes
 
+=======
+>>>>>>> b1c7c727a946ecb0bbde13ceda3fe86404a0e7fe
   Future Inscription(
       String prenom, String nom, String mail, String password) async {
     UserCredential result = await auth.createUserWithEmailAndPassword(
@@ -38,6 +40,10 @@ class FirestoreHelper {
     return MyProfil(snapshot);
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1c7c727a946ecb0bbde13ceda3fe86404a0e7fe
   addUser(String uid, Map<String, dynamic> map) {
     fireUser.doc(uid).set(map);
   }

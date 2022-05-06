@@ -11,16 +11,25 @@ import 'package:file_picker/file_picker.dart';
 class MyUsers extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return MyUsersState();
   }
 }
 
 class MyUsersState extends State<MyUsers> {
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1c7c727a946ecb0bbde13ceda3fe86404a0e7fe
   String? lienImage;
   Uint8List? bytesImages;
   String? nameImage;
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> b1c7c727a946ecb0bbde13ceda3fe86404a0e7fe
   RecupererImage() async {
     FilePickerResult? result = await FilePicker.platform
         .pickFiles(withData: true, type: FileType.image);
@@ -103,7 +112,6 @@ class MyUsersState extends State<MyUsers> {
   /////
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       padding: EdgeInsets.all(20),
       child: bodyPage(),
@@ -123,6 +131,10 @@ class MyUsersState extends State<MyUsers> {
             RecupererImage();
           },
         ),
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1c7c727a946ecb0bbde13ceda3fe86404a0e7fe
         Row(
           children: [
             Container(
@@ -182,6 +194,10 @@ class MyUsersState extends State<MyUsers> {
           height: 10,
         ),
         Text(Myprofil.mail)
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1c7c727a946ecb0bbde13ceda3fe86404a0e7fe
       ],
     );
   }
