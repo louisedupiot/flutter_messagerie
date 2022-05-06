@@ -13,7 +13,6 @@ class messageBubble extends StatelessWidget {
       {Animation? this.animation});
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       margin: EdgeInsets.all(10),
       child: Row(

@@ -13,7 +13,6 @@ class Messagecontroller extends StatefulWidget {
       @required MyProfil this.id, @required MyProfil this.idPartner);
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return MessagecontrollerState();
   }
 }

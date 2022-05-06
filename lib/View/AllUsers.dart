@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class AllUsers extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
+    
     return AllUsersState();
   }
 }
@@ -17,7 +17,7 @@ class AllUsers extends StatefulWidget {
 class AllUsersState extends State<AllUsers> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    
     return bodyPage();
   }
 
@@ -25,11 +25,9 @@ class AllUsersState extends State<AllUsers> {
     return StreamBuilder<QuerySnapshot>(
         stream: FirestoreHelper().fireUser.snapshots(),
         builder: (context, snapshot) {
-          // Pas d'information dans la collection Users
           if (!snapshot.hasData) {
             return const CircularProgressIndicator();
           }
-          // Information dans la collection Users
           else {
             List documents = snapshot.data!.docs;
             return ListView.builder(

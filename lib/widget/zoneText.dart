@@ -8,7 +8,7 @@ class ZoneText extends StatefulWidget {
   ZoneText(@required MyProfil this.partenaire, @required MyProfil this.moi);
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
+    
     return ZoneTextState();
   }
 }
@@ -18,7 +18,7 @@ TextEditingController _textEditingController = new TextEditingController();
 class ZoneTextState extends State<ZoneText> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    
     return Container(
       color: Colors.grey[300],
       padding: EdgeInsets.all(15),
@@ -53,7 +53,7 @@ class ZoneTextState extends State<ZoneText> {
   }
 
   _sendMessage() {
-    //envoie message dans firebase
+    
     print(_textEditingController.text);
   }
 }

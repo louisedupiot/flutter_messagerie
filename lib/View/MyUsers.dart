@@ -11,20 +11,19 @@ import 'package:file_picker/file_picker.dart';
 class MyUsers extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return MyUsersState();
   }
 }
 
 class MyUsersState extends State<MyUsers> {
-  //Variables
+
   String? lienImage;
   Uint8List? bytesImages;
   String? nameImage;
 
-  /////
 
-  //Fonctions
+
+
   RecupererImage() async {
     FilePickerResult? result = await FilePicker.platform
         .pickFiles(withData: true, type: FileType.image);
@@ -55,7 +54,6 @@ class MyUsersState extends State<MyUsers> {
                       child: const Text("Annuler")),
                   ElevatedButton(
                       onPressed: () {
-                        //Stocker mon image dans la base de donnée
                         FirestoreHelper()
                             .stockageImage(nameImage!, bytesImages!)
                             .then((value) {
@@ -85,7 +83,6 @@ class MyUsersState extends State<MyUsers> {
                       child: const Text("Annuler")),
                   ElevatedButton(
                       onPressed: () {
-                        //Stocker mon image dans la base de donnée
                         FirestoreHelper()
                             .stockageImage(nameImage!, bytesImages!)
                             .then((value) {
@@ -109,7 +106,6 @@ class MyUsersState extends State<MyUsers> {
   /////
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       padding: EdgeInsets.all(20),
       child: bodyPage(),
@@ -119,7 +115,6 @@ class MyUsersState extends State<MyUsers> {
   Widget bodyPage() {
     return Column(
       children: [
-        //Logo de moi
         InkWell(
           child: ImageRond(
             image: Myprofil.image,
@@ -131,7 +126,6 @@ class MyUsersState extends State<MyUsers> {
           },
         ),
 
-        //NOm et prénom
         Row(
           children: [
             Container(
@@ -194,7 +188,6 @@ class MyUsersState extends State<MyUsers> {
 
         Text(Myprofil.mail)
 
-        // adresse mail
       ],
     );
   }

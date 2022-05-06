@@ -6,7 +6,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firstapplicationeisi/model/MyProfil.dart';
 
 class FirestoreHelper {
-  //Attributs
   final auth = FirebaseAuth.instance;
   final fireUser = FirebaseFirestore.instance.collection("Users");
   final storage = FirebaseStorage.instance;
@@ -15,9 +14,6 @@ class FirestoreHelper {
   final fire_conversation =
       FirebaseFirestore.instance.collection('Conversations');
 
-  //Méthodes
-
-  // fonction pour s'inscrire
   Future Inscription(
       String prenom, String nom, String mail, String password) async {
     UserCredential result = await auth.createUserWithEmailAndPassword(
@@ -31,7 +27,6 @@ class FirestoreHelper {
     addUser(uid, map);
   }
 
-  //Fonction pour se conneter
   Future<MyProfil> Connexion(String mail, String password) async {
     UserCredential result =
         await auth.signInWithEmailAndPassword(email: mail, password: password);
@@ -40,7 +35,6 @@ class FirestoreHelper {
     return MyProfil(snapshot);
   }
 
-  //Créer un utilisateur dans la base donnée
 
   addUser(String uid, Map<String, dynamic> map) {
     fireUser.doc(uid).set(map);
@@ -55,12 +49,9 @@ class FirestoreHelper {
     auth.signOut();
   }
 
-  //Stocker image
   Future<String> stockageImage(String nameImage, Uint8List data) async {
     String urlChemin = "";
-    //Stocker l'image
     TaskSnapshot download = await storage.ref("image/$nameImage").putData(data);
-    //Récupper le lien de l'image
     urlChemin = await download.ref.getDownloadURL();
     return urlChemin;
   }
